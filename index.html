@@ -23,9 +23,17 @@ layout: home
 {% include header.html %}
 <div class="c-posts o-opacity" data-page="{{ currentPage }}" data-totalPages="{{ paginator.total_pages }}">
 
-<div class="alert alert-info" role="alert">
-  <a href="#" class="alert-link">test 3</a>
+  <div class="container">
+    <div class="row">
+      <div class="alert alert-info" role="alert">
+        <a href="#" class="alert-link">test 3</a>
+      </div>
+      <div class="alert alert-info" role="alert">
+        <a href="#" class="alert-link">test 4</a>
+      </div>
+    </div>
 </div>
+
 
   {% for post in site.posts limit:site.paginate offset:offset %}
   <article class="c-post">
