@@ -2,6 +2,16 @@
 layout: home
 ---
 
+<!-- Bootstrap 4 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- cookiealert.css -->
+<link rel="stylesheet" href="js/cookiealert.js">
+
+<script src="js/cookiealert.js"></script>
+
+
+
 {% if paginator.page %}
   {% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
   {% assign currentPage = paginator.page %}
@@ -30,6 +40,17 @@ layout: home
   </article> <!-- /.c-post -->
   {% endfor %}
 </div> <!-- /.c-posts -->
+
+
+<div class="alert alert-dismissible text-center cookiealert" role="alert">
+  <div class="cookiealert-container">
+      <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="http://cookiesandyou.com/" target="_blank">Learn more</a>
+
+      <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+          I agree
+      </button>
+  </div>
+</div>
 
 {% assign postCount = site.posts | size %}
 {% assign postsCovered = site.paginate | plus:offset %}
