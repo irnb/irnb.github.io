@@ -24,6 +24,17 @@ layout: home
 <div class="c-posts o-opacity" data-page="{{ currentPage }}" data-totalPages="{{ paginator.total_pages }}">
   {% for post in site.posts limit:site.paginate offset:offset %}
   <article class="c-post">
+    
+    <div class="alert alert-dismissible text-center cookiealert" role="alert">
+      <div class="cookiealert-container">
+          <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="http://cookiesandyou.com/" target="_blank">Learn more</a>
+    
+          <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+              I agree
+          </button>
+      </div>
+    </div>
+
     {% if post.image %}
     <a class="c-post-thumbnail o-opacity" style="background-image: url({{"/images/" | prepend: site.baseurl | append : post.image}})"
         href="{{post.url | prepend: site.baseurl}}"></a>
@@ -42,15 +53,7 @@ layout: home
 </div> <!-- /.c-posts -->
 
 
-<div class="alert alert-dismissible text-center cookiealert" role="alert">
-  <div class="cookiealert-container">
-      <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="http://cookiesandyou.com/" target="_blank">Learn more</a>
 
-      <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
-          I agree
-      </button>
-  </div>
-</div>
 
 {% assign postCount = site.posts | size %}
 {% assign postsCovered = site.paginate | plus:offset %}
